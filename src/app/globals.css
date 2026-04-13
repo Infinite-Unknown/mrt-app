@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy: #1e3a5f;
+  --color-kajang: #01873e;
+  --color-putrajaya: #f7cd0c;
+  --color-bg: #f5f7fa;
+  --color-card: #ffffff;
+  --color-text-dark: #333333;
+  --color-text-medium: #444444;
+  --color-text-light: #777777;
+  --color-text-muted: #999999;
+  --color-link: #1565c0;
+  --color-status-green: #4caf50;
+  --color-alert-orange: #ff9800;
+  --color-announce-bg: #fff8e1;
+  --color-border: #e0e0e0;
+  --color-alert-red: #e53935;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #e8e8e8;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile container */
+.mobile-container {
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
