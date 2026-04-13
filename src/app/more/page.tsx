@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/Header";
 
 export default function MorePage() {
@@ -49,20 +51,31 @@ export default function MorePage() {
         <SettingsItem label="Terms & Privacy" />
         <SettingsItem label="Help & Feedback" />
 
-        {/* MRT Corp Banner */}
-        <div className="mt-4 bg-white rounded-xl overflow-hidden">
-          <div className="h-[140px] bg-gradient-to-br from-[#1e3a5f] to-[#2a5580] flex items-center justify-center">
-            <div className="text-center text-white">
-              <div className="flex items-center justify-center gap-1 mb-2">
-                <svg width="40" height="28" viewBox="0 0 40 28" fill="none">
-                  <path d="M20 2C14 2 8 6 6 10C4 14 6 18 10 20" stroke="#e53935" strokeWidth="2.5" fill="none" />
-                  <path d="M20 2C26 2 32 6 34 10C36 14 34 18 30 20" stroke="white" strokeWidth="2.5" fill="none" />
-                  <path d="M10 20C14 22 18 22 20 20C22 22 26 22 30 20" stroke="#01873e" strokeWidth="2.5" fill="none" />
-                </svg>
-              </div>
-              <p className="text-lg font-bold">MRT Corp</p>
-              <p className="text-xs opacity-70 mt-1">Mass Rapid Transit Corporation</p>
-            </div>
+        {/* MRT Corp Copyright Footer */}
+        <div className="mt-4 rounded-xl overflow-hidden">
+          <div className="bg-[#1e3a8a] px-6 py-8 flex flex-col items-center text-center">
+            <Image
+              src="/mrt-logo.png"
+              alt="MRT Corp"
+              width={120}
+              height={54}
+              className="mb-3 brightness-0 invert"
+            />
+            <p className="text-white/70 text-[11px] mb-2">Copyright&copy;2023</p>
+            <p className="text-white text-[11px] font-semibold leading-snug">
+              Malaysia Rapid Transit Corporation Sdn Bhd (902884V)
+            </p>
+            <p className="text-white/70 text-[10px] italic mt-1">
+              Formerly known as Mass Rapid Transit Corporation Sdn Bhd
+            </p>
+            <p className="text-white/70 text-[10px] mt-1.5">All Rights Reserved</p>
+            <Link
+              href="https://www.mymrt.com.my/privacy-notice-pdpa/"
+              target="_blank"
+              className="text-white text-[11px] underline mt-2"
+            >
+              Privacy Notice
+            </Link>
           </div>
         </div>
       </div>

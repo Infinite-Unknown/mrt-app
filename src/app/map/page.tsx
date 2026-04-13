@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import { kajangStations, putrajayaStations, type Station } from "@/data/stations";
 
@@ -15,12 +16,22 @@ export default function MapPage() {
       <Header title="MRT Line Map" />
 
       {/* Hero area */}
-      <div className="relative h-[200px] bg-gradient-to-br from-[#1a3355] via-[#2a5580] to-[#3a6590] flex items-center justify-center overflow-hidden">
-        <div className="text-center text-white">
-          <p className="text-3xl font-bold leading-tight">MRT</p>
-          <p className="text-3xl font-bold leading-tight">
-            {activeLine === "kajang" ? "KAJANG" : "PUTRAJAYA"}
-          </p>
+      <div className="relative h-[200px] overflow-hidden">
+        <Image
+          src="/map_train.jpg"
+          alt="MRT Kajang Line"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <p className="text-3xl font-bold leading-tight">MRT</p>
+            <p className="text-3xl font-bold leading-tight">
+              {activeLine === "kajang" ? "KAJANG" : "PUTRAJAYA"}
+            </p>
+          </div>
         </div>
       </div>
 

@@ -1,13 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Banner */}
-      <div className="relative h-[110px] bg-gradient-to-r from-[#1a3355] via-[#2a5580] to-[#1a3355] overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,#0a1628_0%,#1e3a5f_50%,#2a5580_100%)]" />
-        </div>
+      <div className="relative h-[110px] overflow-hidden">
+        <Image
+          src="/home_train.png"
+          alt="MRT Train"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-white text-center">
             <p className="text-xs opacity-80">Welcome to</p>
